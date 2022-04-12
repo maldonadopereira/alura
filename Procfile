@@ -1,1 +1,1 @@
-web: gunicorn alura.wsgi--log-file -
+web: gunicorn alura.wsgi --log-file -
