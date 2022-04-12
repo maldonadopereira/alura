@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div align="center">
+<h1>IMPORTAR TRANSAÇÕES</h1>
+ <div class="col-lg-8 col-xlg-9 col-md-7">
+     <div class="card">
+         <div class="card-body">
+            <form class="form-horizontal form-material mx-2" action="{% url 'importa_transacao' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="transacao"><b>Escolher Arquivo</b></label>
+                    <input type="file" class="form-control" name="transacao" id="transacao">
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12 d-flex">
+                            <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">Importar</button>
+                    </div>
+                </div>
+            </form>
+         </div>
+     </div>
+ </div>
+</div>
+{% endblock %}
